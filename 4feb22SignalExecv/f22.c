@@ -1,6 +1,7 @@
 #include <signal.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 void func(int x);
 
@@ -14,9 +15,10 @@ main() {
     if (fork() == 0) {
         // Imprimir pid
         printf("f22 PID Hijo: %d\n", getpid());
-        execv("apen", 0);
+        char *argv[1] = {0};
+        execv("apen", argv);
         u = u + 5;
-        printf("\n%f\n", u);
+        printf("\n%d\n", u);
     } else {
         exit(1);
     }

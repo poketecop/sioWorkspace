@@ -8,6 +8,6 @@ main() {
 
     float u;
     pause();
-    printf("\nu=%d\n", u);
+    printf("\nu=%f\n", u);
 
 }
