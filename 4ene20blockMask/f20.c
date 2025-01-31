@@ -7,6 +7,9 @@ void f1(int sig);
 
 main(int a, char *b[]) {
 
+    // Imprimir pid
+    printf("f20 PID Padre: %d\n", getpid());
+
     long c, d;
     signal(SIGUSR1, f1);
     signal(SIGUSR2, SIG_DFL);
@@ -24,5 +27,5 @@ main(int a, char *b[]) {
 
 void f1(int sig)
 {
-    printf("\n\n Texto 1\n", strsignal(sig));
+    printf("\n\n Texto 1\n%d", strsignal(sig));
 }
