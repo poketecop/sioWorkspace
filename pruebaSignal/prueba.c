@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <sys/wait.h>
 
 void fun1(int x);
 
@@ -13,15 +14,13 @@ main()
 
     if (fork() == 0)
     {
-        {
-            // Imprimir pid
-            printf("PID hijo: %d\n", getpid());
-            pause();
-        }
-        else
-        {
-            exit(1);
-        }
+        // Imprimir pid
+        printf("PID hijo: %d\n", getpid());
+        pause();
+    }
+    else
+    {
+        wait(NULL);
     }
 }
 
