@@ -6,7 +6,7 @@
 
 main(int argc, char *argv[])
 {
-    int a, b, c, d;
+    int a, b = 0, c, d;
     if (argc != 2)
         exit(2);
 
